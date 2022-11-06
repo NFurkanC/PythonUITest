@@ -1,8 +1,7 @@
 #:kivy 2.1.0
-
 UIBox:
-#AnchorLayout aktif değil, optimize edilecek!
-<UIBox>:
+#AniBox aktif değil, optimize edilecek!
+<AniBox>:
     canvas:
         Rectangle:
             pos: self.center_x / 2, self.center_y / 2
@@ -13,9 +12,7 @@ UIBox:
         Line:
             points: (self.width/4,self.height/2,self.width*3/4,self.height/2)
 
-<AnchorLayout>:
-    anchor_x:'center'
-    anchor_y:'center'
+<UIBox>:
     canvas:
         Rectangle:
             pos: self.center_x / 2, self.center_y / 2
@@ -23,6 +20,24 @@ UIBox:
         Rectangle:
             pos: self.center_x * 3/2, self.center_y / 2
             size: 10, self.height / 2
-    
-
-
+        Rectangle:
+            pos: self.center_x / 2, self.center_y / 2
+            size: 25, 10
+        Rectangle:
+            pos: self.center_x *3 / 2 -15, self.center_y / 2
+            size: 25, 10
+        Rectangle:
+            pos: self.center_x / 2 , self.center_y * 3 / 2
+            size: 25, 10
+        Rectangle:
+            pos: self.center_x *3 / 2 -15, self.center_y* 3 / 2
+            size: 25, 10
+        
+    Button:
+        pos: 80, 300
+        text: "Artır"
+        on_press: root.on_button1_click()
+    Button:
+        pos: 640, 300
+        text: "Azalt"
+        on_press: root.on_button2_click()
