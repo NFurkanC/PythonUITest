@@ -1,0 +1,28 @@
+#:kivy 2.1.0
+
+UIBox:
+#AnchorLayout aktif değil, optimize edilecek!
+<UIBox>:
+    canvas:
+        Rectangle:
+            pos: self.center_x / 2, self.center_y / 2
+            size: 10, self.height / 2
+        Rectangle:
+            pos: self.center_x * 3/2, self.center_y / 2
+            size: 10, self.height / 2
+        Line:
+            points: (self.width/4,self.height/2,self.width*3/4,self.height/2)
+
+<AnchorLayout>:
+    anchor_x:'center'
+    anchor_y:'center'
+    canvas:
+        Rectangle:
+            pos: self.center_x / 2, self.center_y / 2
+            size: 10, self.height / 2
+        Rectangle:
+            pos: self.center_x * 3/2, self.center_y / 2
+            size: 10, self.height / 2
+    
+
+
