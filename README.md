@@ -8,6 +8,8 @@ This repository is a test repository for my own Kivy Projects. You can directly 
 	
 > Remove unneccesary code	
 
+> Circular gauge is preferred
+
 ## Dependencies
 You need Python 3, Kivy, and its dependencies to run this program.
 
