@@ -21,7 +21,7 @@ class UIBox(Widget):
         with self.canvas:
             self.gauge_line = Line(points=(210,300,600,300),width=3)
             Color(0,1,0)
-    def callback_to_loop(self,dt):
+    def callback_to_loop(self,dt): #dt = loop interval
         x, y, x2, y2 = self.gauge_line.points
         d1 = arduino.readline().rstrip().decode()
         print(d1) 
@@ -33,7 +33,7 @@ class UIBox(Widget):
 
     def on_button1_click(self):
 
-        self.loop_thread = Clock.schedule_interval(self.callback_to_loop, .05)  
+        self.loop_thread = Clock.schedule_interval(self.callback_to_loop, .025) #interval = 0.05 saniye, serial'i yakalamak için delay'in yarısı kadar interval 
         
     #class AniBox aktif değil!
 

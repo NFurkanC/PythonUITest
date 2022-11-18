@@ -8,5 +8,5 @@ void setup() {
 void loop() {
   reading = analogRead(pot);
   Serial.println(reading);
-  delay(100);  
+  delay(50);  
 }
