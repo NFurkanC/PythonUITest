@@ -6,6 +6,8 @@ from kivy.uix.anchorlayout import AnchorLayout
 from kivy.graphics.vertex_instructions import Line
 from kivy.graphics.context_instructions import Color
 from kivy.metrics import dp
+import serial
+
 
 class AniBox(Widget):
     pass
@@ -25,9 +27,10 @@ class UIBox(Widget):
         x, y, x2, y2 = self.gauge_line.points
         y2= y2- dp(20)
         y += dp(20)
+        print(y,y2)
         self.gauge_line.points = (x,y,x2,y2)
 #class AniBox aktif değil!
-class AniUI(App):
+class MizanUI(App):
     pass
 
-AniUI().run()
+MizanUI().run()
