@@ -1,18 +1,14 @@
 from kivy.app import App
 from kivy.uix.widget import Widget
-from kivy.animation import Animation
-from kivy.uix.image import Image
-from kivy.uix.anchorlayout import AnchorLayout
 from kivy.graphics.vertex_instructions import Line
 from kivy.graphics.context_instructions import Color
 from kivy.metrics import dp
 from kivy.clock import Clock
-from kivy.uix.label import Label
+from kivy.properties import BooleanProperty
 import serial
-import time
 
+count = 0
 arduino= serial.Serial(port = 'COM4', baudrate = 9600, timeout =.1)
-time.sleep(1)
     
 class UIBox(Widget):
     loop_thread = None
@@ -31,11 +27,13 @@ class UIBox(Widget):
             y2 = dp(440 - (data * 0.27))
             self.gauge_line.points = (x,y,x2,y2)
 
-    def on_button1_click(self):
-
-        self.loop_thread = Clock.schedule_interval(self.callback_to_loop, .025) #interval = 0.05 saniye, serial'i yakalamak için delay'in yarısı kadar interval 
-        
-    #class AniBox aktif değil!
+    def on_button1_click(self, widget):
+        if widget.state == "normal":
+            widget.text = "Kapalı"
+            self.loop_thread = Clock.unschedule(self.callback_to_loop)
+        if widget.state == "down":
+            widget.text = "Açık"
+            self.loop_thread = Clock.schedule_interval(self.callback_to_loop, .025) #interval = 0.025 saniye, serial'i yakalamak için delay'in yarısı kadar interval 
 
 class MizanUI(App):
     pass

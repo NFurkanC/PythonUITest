@@ -22,11 +22,11 @@ UIBox:
             pos: self.center_x *3 / 2 -15, self.center_y* 3 / 2
             size: 25, 10
         
-    Button:
+    ToggleButton:
         pos: 350, 20
-        text: "Başlat"
-        on_press: root.on_button1_click()
-
+        text: "Kapalı"
+        on_state: root.on_button1_click(self)
+        
     Label:
         id:label_1
         text: "Gyro"
