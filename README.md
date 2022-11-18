@@ -13,6 +13,6 @@ This repository is a test repository for my own Kivy Projects. You can directly 
 ## Dependencies
 You need Python 3, Kivy, and its dependencies to run this program.
 
-To install Kivy, run `pip install "kivy[full]`
+To install Kivy, run `pip install "kivy[full]"`
 
 Recommended Python version 3.9 or newer
