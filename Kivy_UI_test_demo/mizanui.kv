@@ -1,16 +1,5 @@
 #:kivy 2.1.0
 UIBox:
-#AniBox aktif değil, optimize edilecek!
-<AniBox>:
-    canvas:
-        Rectangle:
-            pos: self.center_x / 2, self.center_y / 2
-            size: 10, self.height / 2
-        Rectangle:
-            pos: self.center_x * 3/2, self.center_y / 2
-            size: 10, self.height / 2
-        Line:
-            points: (self.width/4,self.height/2,self.width*3/4,self.height/2)
 
 <UIBox>:
     canvas:
@@ -37,3 +26,10 @@ UIBox:
         pos: 350, 20
         text: "Başlat"
         on_press: root.on_button1_click()
+
+    Label:
+        id:label_1
+        text: "Gyro"
+        halign: "left"
+        valign: "top"
+        font_size: 32
