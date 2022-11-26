@@ -22,9 +22,9 @@ class UIBox(Widget):
         d1 = arduino.readline().rstrip().decode()
         print(d1) 
         if d1:
-            data = int(d1)
-            y = dp(160 + (data * 0.27))
-            y2 = dp(440 - (data * 0.27))
+            data = float(d1)
+            y = dp(160 + (data * 1.5555))
+            y2 = dp(440 - (data * 1.5555))
             self.gauge_line.points = (x,y,x2,y2)
 
     def on_button1_click(self, widget):
