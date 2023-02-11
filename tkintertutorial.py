@@ -88,7 +88,7 @@ if __name__ == '__main__':
     gauge1 = OrientDisplay(topFrame)
     gauge2 = OrientDisplay(topFrame)
     #root.resizable(False,False)
-    root.title("Orient Gauge")
+    root.title("Zağanos UI")
     gauge0.grid(row = 0, column = 0, padx=20, pady=20)
     gauge1.grid(row = 0, column = 1, padx = 20, pady = 20)
     gauge2.grid(row = 0, column = 2,padx= 20, pady = 20)
